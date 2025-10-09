@@ -1,0 +1,120 @@
+<app-secondary-navbar></app-secondary-navbar>
+<!-- CONTACT SECTION -->
+<section class="flex flex-col lg:flex-row w-full px-6 lg:px-16 py-12 lg:py-24 bg-white font-sans relative">
+  <!-- Left Section -->
+  <div class="lg:w-1/2 w-full flex flex-col justify-between mb-10 lg:mb-0 pr-0 lg:pr-12 ml-17">
+    <div>
+      <h2 class="text-4xl lg:text-5xl font-bold text-black mb-6 leading-snug">
+        Got an idea for<br /> your project?
+      </h2>
+      <p class="text-lg text-gray-600">
+        We’d love to learn more about you<br />
+        and what we can design and build together.
+      </p>
+    </div>
+
+    <div class="mt-10 lg:mt-auto">
+      <div class="flex items-center mb-4">
+        <span class="text-black mr-3">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v1l-10 6L2 5V4zm0 2.236l8.803 5.282a1 1 0 001.394 0L22 6.236V20a2 2 0 01-2 2H4a2 2 0 01-2-2V6.236z" />
+          </svg>
+        </span>
+        <a href="mailto:info&#64;cubix.co" class="text-black text-lg">info&#64;cubix.co</a>
+      </div>
+      <div class="flex items-center">
+        <span class="text-black mr-3">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2 3a1 1 0 011-1h3a1 1 0 011 .883l.517 4.65a1 1 0 01-.21.735L5.379 11.3a16.978 16.978 0 007.322 7.321l3.032-2.928a1 1 0 01.734-.211l4.65.517A1 1 0 0122 19v3a1 1 0 01-1 1h-1C10.611 23 1 13.389 1 3V3a1 1 0 011-1z" />
+          </svg>
+        </span>
+        <a href="tel:866-978-2220" class="text-black text-lg">866-978-2220</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Section -->
+  <div class="lg:w-1/2 w-fullv mr-10">
+    <form class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          type="text"
+          placeholder="Name*"
+          class="w-full p-4 bg-gray-100 rounded-lg outline-none"
+        />
+        <input
+          type="tel"
+          placeholder="Phone*"
+          class="w-full p-4 bg-gray-100 rounded-lg outline-none"
+        />
+      </div>
+      <input
+        type="email"
+        placeholder="Email*"
+        class="w-full p-4 bg-gray-100 rounded-lg outline-none"
+      />
+      <textarea
+        rows="5"
+        placeholder="Message*"
+        class="w-full p-4 bg-gray-100 rounded-lg outline-none resize-none"
+      ></textarea>
+      <button
+        type="submit"
+        class="w-full py-4 bg-black text-white font-semibold text-lg rounded-full hover:bg-gray-800 transition"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+
+  <!-- Vertical "Text Us" Button -->
+  <div class="hidden lg:block absolute left-0 top-1/3 -translate-y-1/2">
+    <div class="bg-green-500 text-white font-semibold text-sm px-3 py-2 rounded-r-lg transform -rotate-90 origin-bottom-left">
+      Text Us
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="flex flex-col items-center justify-center w-full px-6 lg:px-6 py-6 text-center bg-white">
+
+<div class="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-white">
+  <p class="text-sm md:text-base mb-2 text-black">Pull the Trigger!</p>
+  <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-black">
+    Let’s bring your <br /> vision to life
+  </h1>
+  <button
+    class="bg-black text-white font-semibold rounded-full px-8 py-3 hover:bg-gray-800 transition"
+    (click)="toggleGotAProjectModal()"
+  >
+    Get Started
+  </button>
+</div>
+
+<!-- Slide-in Got A Project Modal (No full-page overlay, just a slide panel) -->
+<div
+  *ngIf="showGotAProjectModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300 transform translate-x-0"
+  style="backdrop-filter: blur(5px);"
+>
+  <button
+    class="absolute top-4 right-4 text-white bg-white/10 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold hover:bg-white/20 transition"
+    (click)="toggleGotAProjectModal()"
+    aria-label="Close Modal"
+  >
+    &times;
+  </button>
+
+  <div
+  *ngIf="showGotAProjectModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300 transform translate-x-0"
+  style="backdrop-filter: blur(5px);"
+>
+  <app-got-a-project (close)="toggleGotAProjectModal()"></app-got-a-project>
+</div>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<app-footer></app-footer>

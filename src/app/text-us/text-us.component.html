@@ -1,0 +1,50 @@
+<!-- Vertical "Text Us" Button -->
+<div class="fixed top-1/2 left-3 transform -translate-y-1/2 z-50">
+  <div class="w-[150px] h-[60px] overflow-visible">
+    <button
+      (click)="toggleChat()"
+      class="bg-[#21cc5b] text-black w-full h-full rotate-[-90deg] origin-left text-2xl font-bold shadow-xl hover:bg-[#1aaa4a] transition rounded-br-4xl rounded-bl-4xl"
+    >
+      Text Us
+    </button>
+  </div>
+</div>
+
+<!-- Chat Popup with Blurred Background -->
+<div *ngIf="isChatOpen" class="fixed inset-0 z-50 flex justify-center items-center">
+  <!-- Backdrop -->
+  <div
+    class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300"
+    (click)="toggleChat()"
+  ></div>
+
+  <!-- Chat Box -->
+  <div
+    class="relative z-10 bg-white shadow-2xl rounded-lg w-80 max-w-full p-6 space-y-4 border border-gray-200"
+  >
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-semibold text-gray-800">Chat with Cubix.</h2>
+      <button (click)="toggleChat()" class="text-gray-400 hover:text-gray-600 text-xl font-bold">
+        &times;
+      </button>
+    </div>
+
+    <input
+      type="tel"
+      placeholder="Enter your phone number"
+      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#21cc5b]"
+    />
+    <p class="text-sm text-gray-500">Live representative responds immediately</p>
+
+    <button
+      class="w-full bg-[#21cc5b] hover:bg-[#1aaa4a] text-white py-2 rounded-md text-lg font-semibold transition"
+    >
+      Start Text Chat
+    </button>
+
+    <div class="text-center text-xs text-gray-400">
+      Powered by <span class="font-semibold text-gray-500">Liveforce</span><br />
+      <span class="italic">Standard SMS charges may apply*</span>
+    </div>
+  </div>
+</div>

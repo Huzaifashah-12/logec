@@ -1,0 +1,272 @@
+
+
+
+<!-- HERO SECTION -->
+<section class="relative h-screen flex items-center justify-center text-white text-center overflow-hidden">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-[-1]">
+    <source src="video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 p-6 max-w-7xl mx-auto w-full">
+    <div class="text-left mt-10 md:mt-30 md:mr-[90px]">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight">
+        We are a <span class="text-[#21cc5b]">Software <br />Development</span><br />
+        Company
+      </h1>
+      <p class="mt-4 text-2xl sm:text-3xl md:text-4xl max-w-4xl">
+        We are your trusted development partner with just <br />
+        one goal in focus — to build products that generate a 
+        lasting, profitable impact.
+      </p>
+    </div>
+
+    <!-- Draggable Container -->
+    <div
+      class="w-[300px] h-[300px] mx-auto md:mr-[40px] relative "
+      style="touch-action: none;"
+      (pointerdown)="startDrag($event)"
+      (pointermove)="onDrag($event)"
+      (pointerup)="endDrag()"
+      (pointerleave)="endDrag()"
+    >
+      <!-- Draggable Circle -->
+      <div
+        [ngStyle]="{
+          transform: 'translate(' + position.x + 'px, ' + position.y + 'px)',
+          backgroundColor: isDragging ? '#ffffff' : '#21cc5b'
+        }"
+        class="w-[180px] h-[180px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+               flex items-center justify-center text-center 
+               text-black text-lg rounded-full 
+               transition-colors duration-200 shadow-lg select-none cursor-pointer"
+        role="button"
+        aria-label="Let’s Discuss your idea"
+        (click)="toggleGotAProjectModal()"
+      >
+     <div class="text-center text-black text-lg leading-tight relative inline-block">
+  <!-- Arrow positioned above "Let’s Discuss" -->
+  <span class="absolute -top-9 right-8 text-[32px] leading-none">&#8599;</span>
+
+  <!-- Text block -->
+  <div>
+    Let’s Discuss<br />
+    your idea
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- SUCCESS STORIES -->
+<section class="bg-white py-20 px-6 md:px-12">
+  <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-16 ml-0 md:ml-[125px]">Our Success Stories</h2>
+
+  <div class="flex flex-wrap justify-center gap-12">
+    <!-- Cards -->
+    <article class="w-full md:w-[40%] xl:w-[40%] flex flex-col items-start" aria-label="Goobr App story">
+     <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[600px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">A Social Networking for Pets and Pet Owners</h3>
+        <p class="text-gray-700">
+          Goobr is a trailblazing social networking app dedicated to pets and their owners.
+        </p>
+      </div>
+    </article>
+
+    <article class="w-full md:w-[45%] xl:w-[40%] flex flex-col items-start mt-10 md:mt-30" aria-label="Tulsa Airport App story"> 
+    <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[700px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">Official Website and App for Tulsa Airport</h3>
+        <p class="text-gray-700">
+          Tulsa Airport, a prominent name in aviation, sought Cubix’s expertise to enhance its digital presence.
+        </p>
+      </div>
+    </article>
+
+    <article class="w-full md:w-[45%] xl:w-[40%] flex flex-col items-start mb-6" aria-label="Ecommerce Platform story">
+     <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[600px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">Scalable Ecommerce Platform</h3>
+        <p class="text-gray-700">
+          Built a powerful, user-friendly ecommerce platform helping businesses scale fast.
+        </p>
+      </div>
+    </article>
+
+    <article class="w-full md:w-[45%] xl:w-[40%] flex flex-col items-start mt-10 md:mt-30" aria-label="Fitness Tracker App story"> 
+     <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[600px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">Smart Fitness Tracker App</h3>
+        <p class="text-gray-700">
+          An innovative app that helps users track workouts, nutrition, and sleep in one place.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="py-16 px-6 md:px-12">
+  <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 ml-0 md:ml-[125px]">Our Journey of Building Success</h2>
+  <p class="max-w-2xl text-lg mb-12 text-gray-700 ml-0 md:ml-[125px]">
+    We are a full-cycle product development company that combines creative thinking with technical expertise to create user-centric products that solve real problems and drive business growth.
+  </p>
+
+  <div class="flex flex-wrap gap-10 sm:gap-20 ml-0 md:ml-[125px]">
+    <div class="w-60">
+      <h3 class="text-5xl font-bold text-black">1,300+</h3>
+      <p class="mt-2 text-lg text-gray-700">Completed Projects</p>
+    </div>
+    <div class="w-60">
+      <h3 class="text-5xl font-bold text-black">350+</h3>
+      <p class="mt-2 text-lg text-gray-700">Talented Cubixians</p>
+    </div>
+    <div class="w-60">
+      <h3 class="text-5xl font-bold text-black">600+</h3>
+      <p class="mt-2 text-lg text-gray-700">Satisfied Clients</p>
+    </div>
+  </div>
+</section>
+<!-- Scrolling Technologies Bar -->
+<div class="overflow-hidden w-full mt-10 mb-10 h-[100px] flex items-center">
+  <div class="inline-block animate-scrollLeft text-black text-[3rem] sm:text-[3.5rem] md:text-[4rem] leading-[1.2] min-w-max">
+    <span class="mx-6">Android</span>•
+    <span class="mx-6">iOS</span>•
+    <span class="mx-6">UX Design</span>•
+    <span class="mx-6">SAAS</span>•
+    <span class="mx-6">IoT</span>•
+    <span class="mx-6">Web Design</span>•
+    <span class="mx-6">Android</span>•
+    <span class="mx-6">iOS</span>•
+    <span class="mx-6">UX Design</span>•
+    <span class="mx-6">SAAS</span>•
+    <span class="mx-6">IoT</span>•
+    <span class="mx-6">Web Design</span>•
+  </div>
+</div>
+
+<section class="min-h-screen flex items-start justify-center bg-black text-white px-4 py-20">
+  <div class="flex w-full max-w-7xl gap-10">
+    
+    <!-- Left: Steps -->
+    <div class="flex-1 space-y-32">
+      <div
+        *ngFor="let step of steps; let i = index"
+        class="opacity-70 hover:opacity-100 transition duration-500"
+      >
+        <div class="text-green-500 font-semibold text-sm">{{ i + 1 }}/06</div>
+        <h2 class="text-4xl font-bold text-green-400">{{ step.title }}</h2>
+        <p class="mt-4 text-lg text-white/80">{{ step.description }}</p>
+      </div>
+    </div>
+
+    <!-- Right: Sticky Image Container -->
+    <div
+      class="w-[32%] sticky top-32 h-[calc(100vh-8rem)] flex items-center rounded-[250px] overflow-hidden border-2 border-gray-700 bg-black ml-30"
+    >
+      <img
+        [src]="currentImage"
+        alt="Step Image"
+        class="w-full h-full object-cover transition-all duration-700"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="max-w-7xl mx-auto px-6 py-12 mb-0 mb-6">
+  <h2 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 text-black">Technologies we use</h2>
+  <p class="text-lg sm:text-xl text-gray-800 leading-relaxed max-w-3xl">
+    Hire from our pool of 350+ specialized experts in web, mobile, and software engineering, specializing in the latest technologies and frameworks, ready to scale your development teams effortlessly.
+  </p>
+</section>
+
+<div class="flex flex-col lg:flex-row w-full max-w-7xl mx-auto ml-6">
+  <!-- Sidebar / Nav -->
+  <nav class="w-full lg:w-56 p-6 lg:ml-40 border-b lg:border-b-0 lg:border-r border-gray-300">
+    <ul class="space-y-4">
+      <li *ngFor="let tab of tabs">
+        <button
+          (click)="selectTab(tab.name)"
+          [class.bg-green-100]="selectedTab === tab.name"
+          class="w-full text-left px-5 py-3 rounded-full font-semibold transition-colors 
+         bg-gradient-to-r from-green-100 to-white text-gray-800 hover:from-green-200 hover:to-white"
+        >
+          {{ tab.name }}
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div class="flex-1 p-6 sm:p-10 overflow-auto bg-white">
+    <ng-container *ngFor="let tab of tabs">
+      <div *ngIf="selectedTab === tab.name">
+        <ng-container *ngFor="let section of tab.content | keyvalue">
+          <h2 class="text-xl sm:text-2xl font-bold mb-5 pb-2 border-b border-gray-300">
+            {{ section.key }}
+          </h2>
+          <div class="flex flex-wrap gap-4 mb-10">
+            <div
+              *ngFor="let item of section.value"
+              class="bg-gray-100 text-gray-900 px-6 py-2 rounded-full font-medium shadow-sm flex items-center hover:bg-gray-200 transition"
+            >
+              {{ item.label }}
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<div class="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-white">
+  <p class="text-sm md:text-base mb-2 text-black">Pull the Trigger!</p>
+  <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-black">
+    Let’s bring your <br /> vision to life
+  </h1>
+  <button
+    class="bg-black text-white font-semibold rounded-full px-8 py-3 hover:bg-gray-800 transition"
+    (click)="toggleGotAProjectModal()"
+  >
+    Get Started
+  </button>
+</div>
+
+<!-- Slide-in Got A Project Modal (No full-page overlay, just a slide panel) -->
+<div
+  *ngIf="showGotAProjectModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300 transform translate-x-0"
+  style="backdrop-filter: blur(5px);"
+>
+  <button
+    class="absolute top-4 right-4 text-white bg-white/10 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold hover:bg-white/20 transition"
+    (click)="toggleGotAProjectModal()"
+    aria-label="Close Modal"
+  >
+    &times;
+  </button>
+
+  <div
+  *ngIf="showGotAProjectModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300 transform translate-x-0"
+  style="backdrop-filter: blur(5px);"
+>
+  <app-got-a-project (close)="toggleGotAProjectModal()"></app-got-a-project>
+</div>
+</div>
+
+
+<app-footer></app-footer>

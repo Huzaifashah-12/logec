@@ -1,0 +1,59 @@
+<app-secondary-navbar></app-secondary-navbar>
+
+<!-- Section: Be Part of Something Great -->
+<section class="max-w-screen-xl mx-auto px-6 md:px-12 lg: ml-23 mt-25">
+  <!-- Heading -->
+  <div class="mb-12 text-center md:text-left">
+    <h2 class="text-4xl md:text-5xl font-bold mb-7 ">
+      Be part of something great
+    </h2>
+    <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto md:mx-0">
+      Join the ranks of visionaries, innovators, and creators, combining talent 
+      and technology to craft a future that is dynamic, inclusive, and groundbreaking.
+    </p>
+  </div>
+
+  <!-- Full-Width Image -->
+
+</section>
+  <div class="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-10">
+    <img 
+      src="watch.jpg" 
+      alt="Team working together"
+      class="w-screen h-auto object-cover"
+    />
+  </div>
+<!-- Section: Call to Action -->
+<section class="flex flex-col items-center justify-center px-6 py-16 text-center bg-white">
+  <p class="text-sm md:text-base mb-2 text-black">Pull the Trigger!</p>
+  <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-black">
+    Let’s bring your <br class="hidden sm:block" /> vision to life
+  </h1>
+  <button
+    class="bg-black text-white font-semibold rounded-full px-8 py-3 hover:bg-gray-800 transition"
+    (click)="toggleGotAProjectModal()"
+  >
+    Get Started
+  </button>
+</section>
+
+<!-- Slide-in Got A Project Modal -->
+<div
+  *ngIf="showGotAProjectModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300"
+  style="backdrop-filter: blur(5px);"
+>
+  <!-- Close Button -->
+  <button
+    class="absolute top-4 right-4 text-white bg-white/10 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold hover:bg-white/20 transition"
+    (click)="toggleGotAProjectModal()"
+    aria-label="Close Modal"
+  >
+    &times;
+  </button>
+
+  <!-- Modal Content -->
+  <app-got-a-project (close)="toggleGotAProjectModal()"></app-got-a-project>
+</div>
+
+<app-footer></app-footer>

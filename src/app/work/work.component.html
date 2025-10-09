@@ -1,0 +1,147 @@
+<app-secondary-navbar></app-secondary-navbar>
+
+<!-- Dropdown Filters -->
+<div class="px-4 pt-8 pb-4 md:px-12 lg:px-24 bg-white ml-10">
+  <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Case Studies</h1>
+  <p class="text-lg md:text-2xl text-gray-600 mb-10">
+    See how Cubix has helped its clients achieve their vision of <br />
+    digital innovation.
+  </p>
+
+  <div class="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8">
+    <!-- Services Dropdown -->
+    <div class="relative w-full md:w-1/3">
+      <button
+        class="w-full bg-gray-100 px-4 py-6 rounded-full text-left flex justify-between items-center"
+        (click)="toggleDropdown('services')"
+      >
+        <span>{{ selectedService }}</span>
+        <span>&#9662;</span>
+      </button>
+      <ul
+        *ngIf="dropdownOpen.services"
+        class="absolute w-full mt-2 bg-white shadow-lg rounded-lg z-50 border"
+      >
+        <li
+          *ngFor="let item of services"
+          (click)="selectOption('services', item)"
+          class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Categories Dropdown -->
+    <div class="relative w-full md:w-1/3">
+      <button
+        class="w-full bg-gray-100 px-4 py-6 rounded-full text-left flex justify-between items-center"
+        (click)="toggleDropdown('categories')"
+      >
+        <span>{{ selectedCategory }}</span>
+        <span>&#9662;</span>
+      </button>
+      <ul
+        *ngIf="dropdownOpen.categories"
+        class="absolute w-full mt-2 bg-white shadow-lg rounded-lg z-50 border"
+      >
+        <li
+          *ngFor="let item of categories"
+          (click)="selectOption('categories', item)"
+          class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Technologies Dropdown -->
+    <div class="relative w-full md:w-1/3">
+      <button
+        class="w-full bg-gray-100 px-4 py-6 rounded-full text-left flex justify-between items-center"
+        (click)="toggleDropdown('technologies')"
+      >
+        <span>{{ selectedTechnology }}</span>
+        <span>&#9662;</span>
+      </button>
+      <ul
+        *ngIf="dropdownOpen.technologies"
+        class="absolute w-full mt-2 bg-white shadow-lg rounded-lg z-50 border"
+      >
+        <li
+          *ngFor="let item of technologies"
+          (click)="selectOption('technologies', item)"
+          class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- SUCCESS STORIES -->
+<section class="bg-white py-20 px-1 md:px-2 ">
+
+  <div class="flex flex-wrap justify-center gap-12">
+    <!-- Cards -->
+    <article class="w-full md:w-[40%] xl:w-[40%] flex flex-col items-start" aria-label="Goobr App story">
+     <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[600px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">A Social Networking for Pets and Pet Owners</h3>
+        <p class="text-gray-700">
+          Goobr is a trailblazing social networking app dedicated to pets and their owners.
+        </p>
+      </div>
+    </article>
+
+    <article class="w-full md:w-[45%] xl:w-[40%] flex flex-col items-start mt-10 md:mt-30" aria-label="Tulsa Airport App story"> 
+    <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[700px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">Official Website and App for Tulsa Airport</h3>
+        <p class="text-gray-700">
+          Tulsa Airport, a prominent name in aviation, sought Cubix’s expertise to enhance its digital presence.
+        </p>
+      </div>
+    </article>
+
+    <article class="w-full md:w-[45%] xl:w-[40%] flex flex-col items-start mb-6" aria-label="Ecommerce Platform story">
+     <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[600px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">Scalable Ecommerce Platform</h3>
+        <p class="text-gray-700">
+          Built a powerful, user-friendly ecommerce platform helping businesses scale fast.
+        </p>
+      </div>
+    </article>
+
+    <article class="w-full md:w-[45%] xl:w-[40%] flex flex-col items-start mt-10 md:mt-30" aria-label="Fitness Tracker App story"> 
+     <img src="image.jpg" alt="..." class="w-full max-w-[800px] h-[600px] object-cover rounded-3xl shadow-md mb-6" />
+
+      <div class="text-left w-full">
+        <h3 class="text-xl font-semibold mb-2">Smart Fitness Tracker App</h3>
+        <p class="text-gray-700">
+          An innovative app that helps users track workouts, nutrition, and sleep in one place.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="flex flex-col items-center justify-center w-full px-6 lg:px-16 py-20 text-center bg-white">
+  <p class="text-sm md:text-base mb-2 text-black">Pull the Trigger!</p>
+  <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-black">
+    Let’s bring your <br /> vision to life
+  </h1>
+  <button
+    class="bg-black text-white font-semibold rounded-full px-8 py-3 hover:bg-gray-800 transition"
+    (click)="toggleGotAProjectModal()"
+  >
+    Get Started
+  </button>
+</section>
+
+<app-footer></app-footer>

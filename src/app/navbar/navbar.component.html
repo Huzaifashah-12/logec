@@ -1,0 +1,331 @@
+<nav class="absolute inset-x-0 top-0 z-40 bg-transparent text-white w-full transition-colors duration-300">
+  <div class="flex items-center justify-between px-4 py-3 md:px-8 lg:px-12">
+    <!-- Logo + Hamburger -->
+    <div class="flex items-center gap-4 ml-37">
+      <a routerLink="/"><img src="logo.jpg" alt="Cubix Logo" class="h-10" /></a>
+      <button class="flex flex-col justify-center gap-1.5 md:hidden" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-8 lg:gap-15 font-bold">
+
+<li class="relative">
+  <a 
+    routerLink="/services"
+    (click)="toggleServices($event)" 
+    class="text-white hover:text-green-500 transition font-semibold cursor-pointer"
+  >
+    Services
+  </a>
+</li>
+       <!-- Dropdown Menu -->
+  <div
+    *ngIf="isServicesOpen"
+ 
+    class="absolute top-full left-0 w-full bg-white text-black shadow-xl z-50  py-10 transition-all duration-300 flex gap-10  "
+  >
+  <h1 class="text-3xl ml-49 font-bold">Services</h1>
+      <div class="border-l-2 border-gray-300"></div>
+    <!-- Mobile App -->
+    <div>
+      <h3 class="font-bold mb-2">Mobile App</h3>
+      <ul class="space-y-1 text-gray-600">
+        <li>iOS App</li>
+        <li>Android App</li>
+        <li>eCommerce App</li>
+        <li>visionOS App</li>
+        <li>Enterprise App</li>
+      </ul>
+    </div>
+
+    <!-- Cross Platform App -->
+    <div>
+      <h3 class="font-bold mb-2">Cross Platform App</h3>
+      <ul class="space-y-1 text-gray-600">
+        <li>Flutter App</li>
+        <li>Hybrid App</li>
+        <li>Ionic App</li>
+        <li>Sencha App</li>
+        <li>Nativescript App</li>
+      </ul>
+    </div>
+
+    <!-- Software Development -->
+    <div>
+      <h3 class="font-bold mb-2">Software Development</h3>
+      <ul class="space-y-1 text-gray-600">
+        <li>Software Consulting</li>
+        <li>System Integration</li>
+        <li>Software Design</li>
+        <li>Software Testing</li>
+        <li>Software Maintenance & Support</li>
+        <li>Software Product Development</li>
+        <li>Custom API Development</li>
+        <li>Cloud Software Development</li>
+        <li>IoT Software Development</li>
+        <li>Web App Development</li>
+        <li>Web Development</li>
+        <li>Custom Web Development</li>
+      </ul>
+    </div>
+
+    <!-- eCommerce Store -->
+    <div>
+      <h3 class="font-bold mb-2">eCommerce Store</h3>
+      <ul class="space-y-1 text-gray-600">
+        <li>Magento</li>
+        <li>WooCommerce</li>
+        <li>B2B</li>
+        <li>Shopify</li>
+      </ul>
+    </div>
+
+    <!-- Product -->
+    <div>
+      <h3 class="font-bold mb-2">Product</h3>
+      <ul class="space-y-1 text-gray-600">
+        <li>Product Design</li>
+        <li>MVP Development</li>
+        <li>Wireframe and Prototype</li>
+        <li>User Experience Design</li>
+        <li>User Interface Design</li>
+        <li>Web Design</li>
+      </ul>
+    </div>
+  </div>
+
+       <!-- Company Industries (just the trigger) -->
+       <li class="relative">
+  <a 
+    routerLink="/industries"
+    (click)="toggleIndustries($event)" 
+    class="text-white hover:text-green-500 transition font-semibold cursor-pointer "
+  >
+    Industries
+  </a>
+</li>
+ <!-- Mega Menu Dropdown for industries -->
+<div
+  *ngIf="isIndustriesOpen" 
+  class="absolute top-full left-0 w-full bg-white text-black shadow-xl z-50  py-10 transition-all duration-300 "
+>
+  <div class="max-w-screen-xl mx-auto px-12 flex gap-12">
+    <!-- Left Heading -->
+    <h1 class="text-3xl font-bold mb-6">Industries</h1>
+ <div class="border-l-2 border-gray-300"></div>
+    <!-- Columns -->
+    <div class="grid grid-cols-4 gap-12 text-md text-gray-600 font-semibold">
+      <div class="space-y-2">
+        <a routerLink="/automotive" class="block hover:text-green-500">Automotive</a>
+        <a routerLink="/ecommerce" class="block hover:text-green-500">Ecommerce</a>
+        <a routerLink="/crm" class="block hover:text-green-500">CRM Development</a>
+        <a routerLink="/agriculture" class="block hover:text-green-500">Agriculture</a>
+      </div>
+      <div class="space-y-2">
+        <a routerLink="/b2b" class="block hover:text-green-500">B2B Software</a>
+        <a routerLink="/food" class="block hover:text-green-500">Food</a>
+        <a routerLink="/logistics" class="block hover:text-green-500">Logistics</a>
+        <a routerLink="/finance" class="block hover:text-green-500">Finance</a>
+      </div>
+      <div class="space-y-2">
+        <a routerLink="/healthcare" class="block hover:text-green-500">Healthcare</a>
+        <a routerLink="/travel" class="block hover:text-green-500">Travel</a>
+        <a routerLink="/manufacturing" class="block hover:text-green-500">Manufacturing</a>
+        <a routerLink="/real-estate" class="block hover:text-green-500">Real Estate</a>
+      </div>
+      <div class="space-y-2">
+        <a routerLink="/education" class="block hover:text-green-500">Education</a>
+        <a routerLink="/fashion" class="block hover:text-green-500">Fashion and Apparel</a>
+        <a routerLink="/legal" class="block hover:text-green-500">Legal</a>
+        <a routerLink="/hospitality" class="block hover:text-green-500">Hospitality</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+      <li><a routerLink="/work" class="text-white">Work</a></li>
+
+
+      <!-- Company trigger (just the trigger) -->
+     <li class="relative">
+  <a 
+    routerLink="/company"
+    (click)="toggleCompany($event)" 
+    class="text-white hover:text-green-500 transition font-semibold cursor-pointer"
+  >
+    Company
+  </a>
+</li>
+
+<!-- Mega Menu -->
+<div
+  *ngIf="isCompanyOpen"
+  class="absolute top-full left-0 w-full bg-white text-black shadow-xl z-[9999] py-10 transition-all duration-200"
+>
+  <div class="max-w-screen-xl px-12 flex gap-12 ml-0 mr-auto">
+    <h1 class="text-3xl font-bold mb-6 ml-38">Company</h1>
+
+    <!-- Left Column -->
+    <div class="w-1/2">
+      <div class="flex gap-6">
+        <div class="border-l-2 border-gray-300"></div>
+        <div>
+          <h4 class="font-bold text-lg mb-3">About</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a routerLink="/process" class="hover:text-green-500">Process</a></li>
+            <li><a routerLink="/careers" class="hover:text-green-500">Careers</a></li>
+            <li><a routerLink="/clients" class="hover:text-green-500">Clients</a></li>
+            <li><a routerLink="/testonimals" class="hover:text-green-500">Testimonials</a></li>
+            <li><a routerLink="/manifesto" class="hover:text-green-500">Manifesto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="w-1/2">
+      <h4 class="text-lg font-bold mb-4">
+        We partner with the world’s <br />technology leaders.
+      </h4>
+      <div class="flex flex-wrap gap-6 items-center mt-4">
+        <img src="assets/partners/google.png" alt="Google Partner" class="h-10" />
+        <img src="assets/partners/adobe.png" alt="Adobe Partner" class="h-10" />
+        <img src="assets/partners/aws.png" alt="AWS Partner" class="h-10" />
+        <img src="assets/partners/microsoft.png" alt="Microsoft Partner" class="h-10" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <li><a routerLink="/contact" class="text-white">Contact</a></li>
+    </ul>
+
+    <!-- Contact & CTA (desktop) -->
+    <div class="hidden md:flex items-center gap-4">
+      <p class="font-bold text-white text-sm">+92 300 0000000</p>
+      <a (click)="toggleGetInTouchModal()" class="cursor-pointer bg-white text-black px-4 py-2 rounded-full text-sm font-semibold transition">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+
+ 
+</nav>
+
+
+
+
+<!-- 2. Sticky White Navbar -->
+<nav
+  *ngIf="showStickyWhiteNavbar"
+  class="fixed inset-x-0 top-0 z-50 bg-white text-black shadow-md transition duration-300"
+>
+  <div class="flex items-center justify-between px-4 py-3 md:px-8 lg:px-12">
+    <!-- Logo + Hamburger -->
+    <div class="flex items-center gap-4 ml-37">
+      <a routerLink="/">
+        <img src="logo.jpg" alt="Cubix Logo" class="h-10" />
+      </a>
+      <button
+        class="flex flex-col justify-center gap-1.5 md:hidden"
+        (click)="toggleMenu()"
+        aria-label="Toggle navigation"
+      >
+        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-black"></span>
+      </button>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-6 lg:gap-15 font-semibold">
+    
+<li class="relative">
+  <a 
+    routerLink="/services"
+    (click)="toggleServices($event)" 
+    class="text-black hover:text-green-500 transition font-semibold cursor-pointer"
+  >
+    Services
+  </a>
+</li>
+
+      <li class="relative">
+  <a 
+    routerLink="/industries"
+    (click)="toggleIndustries($event)" 
+    class="text-black hover:text-green-500 transition font-semibold cursor-pointer"
+  >
+    Industries
+  </a>
+</li>
+
+      <li><a routerLink="/work" class="text-gray-800">Work</a></li>
+       <!-- Company trigger (just the trigger) -->
+     <li class="relative">
+  <a 
+    routerLink="/company"
+    (click)="toggleCompany($event)" 
+    class="text-black hover:text-green-500 transition font-semibold cursor-pointer"
+  >
+    Company
+  </a>
+</li>
+      <li><a routerLink="/contact" class="text-gray-800">Contact</a></li>
+    </ul>
+
+    <!-- Contact & CTA (desktop) -->
+    <div class="hidden md:flex items-center gap-4">
+      <p class="font-bold text-gray-700 text-sm">+92 300 0000000</p>
+      <a
+        (click)="toggleGetInTouchModal()"
+        class="cursor-pointer bg-black text-white px-4 py-2 rounded-full text-sm font-semibold transition"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    class="md:hidden px-4 py-4 flex flex-col gap-4 font-semibold text-gray-800 bg-white"
+  >
+    <a routerLink="/services">Services</a>
+    <a routerLink="/industries">Industries</a>
+    <a routerLink="/company">Company</a>
+    <a routerLink="/resources">Resources</a>
+    <a routerLink="/work">Work</a>
+    <p class="font-bold">+92 300 0000000</p>
+    <a
+      (click)="toggleGetInTouchModal(); toggleMenu()"
+      class="cursor-pointer bg-black text-white px-4 py-2 rounded-full text-sm font-semibold transition"
+    >
+      Get in Touch
+    </a>
+  </div>
+</nav>
+
+<!-- 🔥 Right-side Sliding Modal -->
+<div
+  *ngIf="showGetInTouchModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300 transform translate-x-0"
+  style="backdrop-filter: blur(5px);"
+>
+  <!-- Close button -->
+  <button
+    class="absolute top-4 right-4 text-white bg-white/10 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold hover:bg-white/20 transition"
+    (click)="toggleGetInTouchModal()"
+    aria-label="Close Modal"
+  >
+    &times;
+  </button>
+
+  <!-- Your form or component -->
+  <app-got-a-project (close)="toggleGetInTouchModal()"></app-got-a-project>
+</div>
