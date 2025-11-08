@@ -25,4 +25,11 @@ export const routes: Routes = [
     { path: 'clients', component: ClientsComponent },
     { path: 'our-team', component: OurTeam },
     { path: 'manifesto', component: ManifestoComponent },
+    
+  // ✅ Default route — when user opens the site
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+  // ✅ Optional catch-all for unknown URLs
+  { path: '**', redirectTo: '/home' }
+
 ];
