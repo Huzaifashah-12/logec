@@ -2,12 +2,22 @@ import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { GotAProjectComponent } from "../got-a-project/got-a-project.component";
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   imports: [CommonModule, RouterLink, GotAProjectComponent],
   styleUrls: ['./navbar.component.css']
 })export class NavbarComponent {
+    hideNavbar = false; // ✅ NEW
+
+  constructor(private router: Router) {
+    router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.hideNavbar = event.url === '/our-team'; // ✅ Hide on this route
+      }
+    });
+  }
   scrolled = false;
   menuOpen = false;
   showStickyWhiteNavbar = false;

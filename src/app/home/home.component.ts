@@ -152,32 +152,32 @@ export class HomeComponent {
     {
       title: 'Ideate',
       description: 'We analyze your vision thoroughly to ensure the roadmap is perfectly aligned with your end goals, setting the stage for product success.',
-      image: 'image.jpg'
+      image: 'ideate.png'
     },
     {
       title: 'Design',
       description: 'Crafting a minimal viable product (MVP) that balances design with core functionality, maximizing value and user satisfaction.',
-      image: 'watch.jpg'
+      image: 'design.png'
     },
     {
       title: 'Develop',
       description: 'Developing end-to-end solutions with a focus on feasibility assessment, architecture design, and agile process to ensure rapid, high-quality delivery.',
-      image: 'image1.jpg'
+      image: 'develop.png'
     },
     {
       title: 'Test',
       description: 'Ensuring your product meets the highest standards of quality and reliability through extensive QA and software testing across all user touch points.',
-      image: 'assets/images/step4.png'
+      image: 'test.png'
     },
     {
       title: 'Launch',
       description: 'Executing a successful product launch by developing tailored deployment plans, executing a smooth rollout, and offering dedicated post-launch assistance.',
-      image: 'assets/images/step5.png'
+      image: 'launch.png'
     },
     {
       title: 'Support',
       description: 'Providing ongoing support and enhancements to ensure continued product success.',
-      image: 'assets/images/step6.png'
+      image: 'support.png'
     }
   ];
 

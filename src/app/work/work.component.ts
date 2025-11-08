@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 import { CommonModule } from '@angular/common';
-import { SecondaryNavbarComponent } from "../secondary-navbar/secondary-navbar.component"; // <-- Required for *ngIf and *ngFor
+import { SecondaryNavbarComponent } from "../secondary-navbar/secondary-navbar.component";
+import { GotAProjectComponent } from "../got-a-project/got-a-project.component";
 
 @Component({
   selector: 'app-work',
-  imports: [FooterComponent, CommonModule, SecondaryNavbarComponent],
+  standalone: true, // ✅ add if using Angular standalone components
+  imports: [FooterComponent, CommonModule, SecondaryNavbarComponent, GotAProjectComponent],
   templateUrl: './work.component.html',
-  styleUrl: './work.component.css'
-})export class WorkComponent {
+  styleUrls: ['./work.component.css'] // ✅ should be styleUrls, not styleUrl
+})
+export class WorkComponent {
   services: string[] = [
     'All Services',
     'App Development',
@@ -16,6 +19,7 @@ import { SecondaryNavbarComponent } from "../secondary-navbar/secondary-navbar.c
     'Blockchain Development',
     'Game Development',
   ];
+
   categories: string[] = ['All Categories', 'Healthcare', 'Education', 'Finance'];
   technologies: string[] = ['All Technologies', 'React', 'Flutter', 'Node.js', 'Angular'];
 
@@ -23,22 +27,17 @@ import { SecondaryNavbarComponent } from "../secondary-navbar/secondary-navbar.c
   selectedCategory = this.categories[0];
   selectedTechnology = this.technologies[0];
 
-  dropdownOpen: {
-    services: boolean;
-    categories: boolean;
-    technologies: boolean;
-  } = {
+  dropdownOpen = {
     services: false,
     categories: false,
     technologies: false,
   };
 
-  // ✅ Modal state variable
-  gotAProjectModalOpen = false;
+  // ✅ Modal toggle state (this is what *ngIf uses)
+  showGotAProjectModal = false;
 
-  // ✅ The missing method
   toggleGotAProjectModal() {
-    this.gotAProjectModalOpen = !this.gotAProjectModalOpen;
+    this.showGotAProjectModal = !this.showGotAProjectModal;
   }
 
   toggleDropdown(type: 'services' | 'categories' | 'technologies') {

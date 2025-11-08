@@ -1,6 +1,4 @@
 
-
-
 <!-- HERO SECTION -->
 <section class="relative h-screen flex items-center justify-center text-white text-center overflow-hidden">
   <!-- Background Video -->
@@ -11,7 +9,7 @@
 
   <!-- Hero Content -->
   <div class="relative z-10 p-6 max-w-7xl mx-auto w-full">
-    <div class="text-left mt-10 md:mt-30 md:mr-[90px]">
+    <div class="text-left mt-10 md:mt-40 md:mr-[90px]">
       <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight">
         We are a <span class="text-[#21cc5b]">Software <br />Development</span><br />
         Company
@@ -38,7 +36,8 @@
           transform: 'translate(' + position.x + 'px, ' + position.y + 'px)',
           backgroundColor: isDragging ? '#ffffff' : '#21cc5b'
         }"
-        class="w-[180px] h-[180px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+        class="w-[180px] h-[180px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[120%]
+
                flex items-center justify-center text-center 
                text-black text-lg rounded-full 
                transition-colors duration-200 shadow-lg select-none cursor-pointer"
@@ -172,7 +171,7 @@
 
     <!-- Right: Sticky Image Container -->
     <div
-      class="w-[32%] sticky top-32 h-[calc(100vh-8rem)] flex items-center rounded-[250px] overflow-hidden border-2 border-gray-700 bg-black ml-30"
+      class="w-[30%] sticky top-32 h-[calc(95vh-8rem)] flex items-center rounded-[250px] overflow-hidden border-2 border-gray-700 bg-black ml-30"
     >
       <img
         [src]="currentImage"

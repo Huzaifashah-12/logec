@@ -1,18 +1,35 @@
+<div *ngIf="!hideNavbar">
 <nav class="absolute inset-x-0 top-0 z-40 bg-transparent text-white w-full transition-colors duration-300">
   <div class="flex items-center justify-between px-4 py-3 md:px-8 lg:px-12">
     <!-- Logo + Hamburger -->
-    <div class="flex items-center gap-4 ml-37">
-      <a routerLink="/"><img src="logo.jpg" alt="Cubix Logo" class="h-10" /></a>
-      <button class="flex flex-col justify-center gap-1.5 md:hidden" (click)="toggleMenu()" aria-label="Toggle navigation">
-        <span class="w-6 h-0.5 bg-white"></span>
-        <span class="w-6 h-0.5 bg-white"></span>
-        <span class="w-6 h-0.5 bg-white"></span>
-      </button>
-    </div>
+<div class="flex items-center gap-4 ml-16">
+  <a routerLink="/" class="flex items-center gap-3">
+    <img src="logo.png" alt="Cubix Logo" class="h-10" />
+
+    <!-- ✅ Added Company Name -->
+    <span class="text-white font-semibold text-lg tracking-wide">
+      Zumatics 
+    </span>
+  </a>
+
+  <button class="flex flex-col justify-center gap-1.5 md:hidden" (click)="toggleMenu()" aria-label="Toggle navigation">
+    <span class="w-6 h-0.5 bg-white"></span>
+    <span class="w-6 h-0.5 bg-white"></span>
+    <span class="w-6 h-0.5 bg-white"></span>
+  </button>
+</div>
+
 
     <!-- Desktop Menu -->
-    <ul class="hidden md:flex items-center gap-8 lg:gap-15 font-bold">
-
+    <ul class="hidden md:flex items-center gap-12 lg:gap-18 font-bold">
+    <li class="relative">
+           <a 
+    routerLink="/home"
+    class="text-white hover:text-green-500 transition font-semibold cursor-pointer"
+  >
+    Home
+  </a>
+  </li>
 <li class="relative">
   <a 
     routerLink="/services"
@@ -98,56 +115,7 @@
     </div>
   </div>
 
-       <!-- Company Industries (just the trigger) -->
-       <li class="relative">
-  <a 
-    routerLink="/industries"
-    (click)="toggleIndustries($event)" 
-    class="text-white hover:text-green-500 transition font-semibold cursor-pointer "
-  >
-    Industries
-  </a>
-</li>
- <!-- Mega Menu Dropdown for industries -->
-<div
-  *ngIf="isIndustriesOpen" 
-  class="absolute top-full left-0 w-full bg-white text-black shadow-xl z-50  py-10 transition-all duration-300 "
->
-  <div class="max-w-screen-xl mx-auto px-12 flex gap-12">
-    <!-- Left Heading -->
-    <h1 class="text-3xl font-bold mb-6">Industries</h1>
- <div class="border-l-2 border-gray-300"></div>
-    <!-- Columns -->
-    <div class="grid grid-cols-4 gap-12 text-md text-gray-600 font-semibold">
-      <div class="space-y-2">
-        <a routerLink="/automotive" class="block hover:text-green-500">Automotive</a>
-        <a routerLink="/ecommerce" class="block hover:text-green-500">Ecommerce</a>
-        <a routerLink="/crm" class="block hover:text-green-500">CRM Development</a>
-        <a routerLink="/agriculture" class="block hover:text-green-500">Agriculture</a>
-      </div>
-      <div class="space-y-2">
-        <a routerLink="/b2b" class="block hover:text-green-500">B2B Software</a>
-        <a routerLink="/food" class="block hover:text-green-500">Food</a>
-        <a routerLink="/logistics" class="block hover:text-green-500">Logistics</a>
-        <a routerLink="/finance" class="block hover:text-green-500">Finance</a>
-      </div>
-      <div class="space-y-2">
-        <a routerLink="/healthcare" class="block hover:text-green-500">Healthcare</a>
-        <a routerLink="/travel" class="block hover:text-green-500">Travel</a>
-        <a routerLink="/manufacturing" class="block hover:text-green-500">Manufacturing</a>
-        <a routerLink="/real-estate" class="block hover:text-green-500">Real Estate</a>
-      </div>
-      <div class="space-y-2">
-        <a routerLink="/education" class="block hover:text-green-500">Education</a>
-        <a routerLink="/fashion" class="block hover:text-green-500">Fashion and Apparel</a>
-        <a routerLink="/legal" class="block hover:text-green-500">Legal</a>
-        <a routerLink="/hospitality" class="block hover:text-green-500">Hospitality</a>
-      </div>
-    </div>
-  </div>
-</div>
 
- 
       <li><a routerLink="/work" class="text-white">Work</a></li>
 
 
@@ -180,7 +148,7 @@
             <li><a routerLink="/process" class="hover:text-green-500">Process</a></li>
             <li><a routerLink="/careers" class="hover:text-green-500">Careers</a></li>
             <li><a routerLink="/clients" class="hover:text-green-500">Clients</a></li>
-            <li><a routerLink="/testonimals" class="hover:text-green-500">Testimonials</a></li>
+            <li><a routerLink="/our-team" class="hover:text-green-500">Our team</a></li>
             <li><a routerLink="/manifesto" class="hover:text-green-500">Manifesto</a></li>
           </ul>
         </div>
@@ -193,10 +161,10 @@
         We partner with the world’s <br />technology leaders.
       </h4>
       <div class="flex flex-wrap gap-6 items-center mt-4">
-        <img src="assets/partners/google.png" alt="Google Partner" class="h-10" />
-        <img src="assets/partners/adobe.png" alt="Adobe Partner" class="h-10" />
-        <img src="assets/partners/aws.png" alt="AWS Partner" class="h-10" />
-        <img src="assets/partners/microsoft.png" alt="Microsoft Partner" class="h-10" />
+        <img src="google-partner.png" alt="Google Partner" class="h-20" />
+        <img src="adobe-acrobate.png" alt="Adobe Partner" class="h-20" />
+        <img src="AWS-partner.png" alt="AWS Partner" class="h-20" />
+        <img src="microsoft.png" alt="Microsoft Partner" class="h-20" />
       </div>
     </div>
   </div>
@@ -208,7 +176,7 @@
 
     <!-- Contact & CTA (desktop) -->
     <div class="hidden md:flex items-center gap-4">
-      <p class="font-bold text-white text-sm">+92 300 0000000</p>
+      <p class="font-bold text-white text-sm">+92 3090184268</p>
       <a (click)="toggleGetInTouchModal()" class="cursor-pointer bg-white text-black px-4 py-2 rounded-full text-sm font-semibold transition">
         Get in Touch
       </a>
@@ -228,10 +196,15 @@
 >
   <div class="flex items-center justify-between px-4 py-3 md:px-8 lg:px-12">
     <!-- Logo + Hamburger -->
-    <div class="flex items-center gap-4 ml-37">
-      <a routerLink="/">
-        <img src="logo.jpg" alt="Cubix Logo" class="h-10" />
-      </a>
+    <div class="flex items-center gap-4 ml-16">
+   <a routerLink="/" class="flex items-center gap-3">
+  <img src="logo.png" alt="Cubix Logo" class="h-10" />
+
+  <span class="text-black font-semibold text-lg tracking-wide">
+    Zumatics
+  </span>
+</a>
+
       <button
         class="flex flex-col justify-center gap-1.5 md:hidden"
         (click)="toggleMenu()"
@@ -244,8 +217,15 @@
     </div>
 
     <!-- Desktop Menu -->
-    <ul class="hidden md:flex items-center gap-6 lg:gap-15 font-semibold">
-    
+    <ul class="hidden md:flex items-center gap-10 lg:gap-18 font-semibold">
+        <li class="relative">
+           <a 
+    routerLink="/home"
+    class="text-black hover:text-green-500 transition font-semibold cursor-pointer"
+  >
+    Home
+  </a>
+  </li>
 <li class="relative">
   <a 
     routerLink="/services"
@@ -253,16 +233,6 @@
     class="text-black hover:text-green-500 transition font-semibold cursor-pointer"
   >
     Services
-  </a>
-</li>
-
-      <li class="relative">
-  <a 
-    routerLink="/industries"
-    (click)="toggleIndustries($event)" 
-    class="text-black hover:text-green-500 transition font-semibold cursor-pointer"
-  >
-    Industries
   </a>
 </li>
 
@@ -296,8 +266,8 @@
   <div
     class="md:hidden px-4 py-4 flex flex-col gap-4 font-semibold text-gray-800 bg-white"
   >
+   <a routerLink="/home">Home</a>
     <a routerLink="/services">Services</a>
-    <a routerLink="/industries">Industries</a>
     <a routerLink="/company">Company</a>
     <a routerLink="/resources">Resources</a>
     <a routerLink="/work">Work</a>
@@ -310,7 +280,7 @@
     </a>
   </div>
 </nav>
-
+</div>
 <!-- 🔥 Right-side Sliding Modal -->
 <div
   *ngIf="showGetInTouchModal"

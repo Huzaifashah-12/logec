@@ -1,0 +1,47 @@
+<app-secondary-navbar></app-secondary-navbar>
+<section class="max-w-screen-xl mx-auto px-6 md:px-12 mt-20">
+  <!-- Heading -->
+  <div class="mb-16 text-center">
+    <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">Our Team</h2>
+    <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
+      Meet the creative minds and technical experts behind Zumatics Technologies —
+      a team dedicated to innovation, design excellence, and delivering world-class software solutions.
+    </p>
+  </div>
+<div class="overflow-x-auto overflow-y-hidden hide-scrollbar w-full">
+  <div class="flex gap-8 py-3">
+    <div
+      *ngFor="let member of team"
+      class="bg-[#0c0c0c] rounded-2xl shadow-lg p-3 hover:shadow-2xl transition-transform hover:-translate-y-2 w-80 flex-shrink-0"
+    >
+      <img
+        [src]="member.image"
+        [alt]="member.name"
+        class="w-full h-66 object-cover rounded-xl mb-3"
+      />
+      <h3 class="text-lg font-semibold text-white mb-1">{{ member.name }}</h3>
+      <p class="text-green-400 font-medium mb-1 text-xs">{{ member.role }}</p>
+      <p class="text-gray-400 text-xs leading-relaxed">{{ member.description }}</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- CTA Section -->
+<section class="flex flex-col items-center justify-center w-full px-6 py-20 text-center bg-white">
+  <p class="text-sm md:text-base mb-2 text-black">Join the Innovation!</p>
+  <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6 text-black">
+    Want to work with our <br /> amazing team?
+  </h1>
+<button
+  class="bg-black text-white font-semibold rounded-full px-8 py-3 hover:bg-gray-800 transition"
+  (click)="toggleGotAProjectModal()"
+
+>
+  Get in Touch
+</button>
+
+</section>
+
+<app-footer></app-footer>

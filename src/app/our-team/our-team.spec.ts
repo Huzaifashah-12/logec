@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestonimalsComponent } from './testonimals.component';
+import { OurTeam } from './our-team';
 
-describe('TestonimalsComponent', () => {
-  let component: TestonimalsComponent;
-  let fixture: ComponentFixture<TestonimalsComponent>;
+describe('OurTeam', () => {
+  let component: OurTeam;
+  let fixture: ComponentFixture<OurTeam>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestonimalsComponent]
+      imports: [OurTeam]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TestonimalsComponent);
+    fixture = TestBed.createComponent(OurTeam);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +20,5 @@ describe('TestonimalsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

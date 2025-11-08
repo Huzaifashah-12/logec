@@ -7,13 +7,13 @@ import { GotAProjectComponent } from './got-a-project/got-a-project.component';
 import { ProcessComponent } from './process/process.component';
 import { CareerComponent } from './career/career.component';
 import { ClientsComponent } from './clients/clients.component';
-import { TestonimalsComponent } from './testonimals/testonimals.component';
 import { ManifestoComponent } from './manifesto/manifesto.component';
+import { OurTeam } from './our-team/our-team';
 
 export const routes: Routes = [
 
       {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     title: 'Home'
   },
@@ -23,6 +23,6 @@ export const routes: Routes = [
     { path: 'process', component: ProcessComponent },
     { path: 'careers', component: CareerComponent },
     { path: 'clients', component: ClientsComponent },
-    { path: 'testonimals', component: TestonimalsComponent },
+    { path: 'our-team', component: OurTeam },
     { path: 'manifesto', component: ManifestoComponent },
 ];

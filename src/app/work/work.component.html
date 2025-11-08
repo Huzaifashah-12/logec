@@ -131,7 +131,9 @@
 </section>
 
 <!-- CTA SECTION -->
-<section class="flex flex-col items-center justify-center w-full px-6 lg:px-16 py-20 text-center bg-white">
+<section class="flex flex-col items-center justify-center w-full px-6  text-center bg-white">
+
+<div class="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-white">
   <p class="text-sm md:text-base mb-2 text-black">Pull the Trigger!</p>
   <h1 class="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-black">
     Let’s bring your <br /> vision to life
@@ -142,6 +144,32 @@
   >
     Get Started
   </button>
+</div>
+
+<!-- Slide-in Got A Project Modal (No full-page overlay, just a slide panel) -->
+<div
+  *ngIf="showGotAProjectModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300 transform translate-x-0"
+  style="backdrop-filter: blur(5px);"
+>
+  <button
+    class="absolute top-4 right-4 text-white bg-white/10 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold hover:bg-white/20 transition"
+    (click)="toggleGotAProjectModal()"
+    aria-label="Close Modal"
+  >
+    &times;
+  </button>
+
+  <div
+  *ngIf="showGotAProjectModal"
+  class="fixed top-0 right-0 z-50 h-full w-full sm:w-[500px] bg-[#0c0c0c] shadow-2xl transition-transform duration-300 transform translate-x-0"
+  style="backdrop-filter: blur(5px);"
+>
+  <app-got-a-project (close)="toggleGotAProjectModal()"></app-got-a-project>
+</div>
+</div>
+
 </section>
+
 
 <app-footer></app-footer>
